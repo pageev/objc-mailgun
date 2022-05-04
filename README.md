@@ -16,7 +16,7 @@ Installation
 Install via Cocoapods - Add:
 
         ```
-        pod 'mailgun', :git => 'git://github.com/pageev/objc-mailgun'
+        pod 'mailgun', :git => 'https://github.com/pageev/objc-mailgun'
         ```
 
 to your Podfile.
