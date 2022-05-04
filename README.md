@@ -1,7 +1,26 @@
 The Mailgun SDK allows your Mac OS X or iOS application to connect with the [Mailgun](http://www.mailgun.com) programmable email platform. Send and manage mailing list subscriptions from your desktop or mobile applications and connect with your users directly in your application.
- 
-**Requirements** The AFNetworking library is required for the `Mailgun` client library.
- 
+
+Fork notes
+===========
+
+Forked to migrate to AFNetworking version 3.0. 
+
+Original objc-mailgun stopped on AFNetworking v1.1.0 which is pretty outdated and produce problems when using others pods which require newer versions of AFNetworking.
+
+Original objc-mailgun git repo can be found [here](https://github.com/rackerlabs/objc-mailgun).
+
+
+Installation
+============
+
+Install via Cocoapods - Add:
+
+        ```
+        pod 'mailgun', :git => 'git://github.com/pageev/objc-mailgun'
+        ```
+
+to your Podfile.
+  
 Easy Image Attaching
 ====================
  
@@ -22,22 +41,3 @@ Sending Example
                        from:@"Excited User <someone@sample.org>" 
                     subject:@"Mailgun is awesome!" 
                        body:@"A unicode snowman for you! ☃"];
- 
-Installation
-============
-
-1. Install via Cocoapods
-
-        pod install mailgun
-
-    or add
-
-        pod 'mailgun', '~> 1.0.3'
-
-    to your Podfile.
-
-2. Install via Source
-
-    1. Clone the repository.
-    2. Copy Mailgun.h/.m and MGMessage.h/.m to your project.
-    3. **NOTE** You will need to install the [AFNetworking](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking) library to use the Mailgun SDK!
