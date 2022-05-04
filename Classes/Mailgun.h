@@ -35,7 +35,6 @@
 #endif
 
 #import <AFNetworking/AFNetworking.h>
-#import <AFNetworking/AFHTTPClient.h>
 
 #import "MGMessage.h"
 
@@ -76,7 +75,7 @@
  
  */
 
-@interface Mailgun : AFHTTPClient
+@interface Mailgun : AFHTTPSessionManager
 
 ///---------------------------
 /// @name Mailgun Client Setup
@@ -84,8 +83,6 @@
 
 /**
  Returns the value for the HTTP headers set in request objects created by the HTTP client.
- 
- @param header The HTTP header to return the default value for
  
  @return The default value for the HTTP header, or `nil` if unspecified
  */
@@ -197,7 +194,7 @@
  */
 - (void)unsubscribeToList:(NSString *)list
                     email:(NSString *)emailAddress
-                  success:(void (^)())success
+                  success:(void (^)(void))success
                   failure:(void (^)(NSError *error))failure;
 
 /**
@@ -210,6 +207,6 @@
  */
 - (void)subscribeToList:(NSString *)list 
                   email:(NSString *)emailAddress
-                success:(void (^)())success
+                success:(void (^)(void))success
                 failure:(void (^)(NSError *error))failure;
 @end
